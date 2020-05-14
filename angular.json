@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "elearnin-formalab"
+    }
+  },
+  "defaultProject": "elearnin-formalab",
+  "cli": {
+    "analytics": false
+  }
 }

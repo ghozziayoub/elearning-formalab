@@ -35,19 +35,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-
     let data = this.loginForm.value ;
-    
-    console.log(data);
-    
-    
+    console.log(data); 
   }
 
 }
-/**
- * FormGroup
- * FormControl
- * FormBuilder
- * Validators
- *
- */

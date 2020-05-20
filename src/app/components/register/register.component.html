@@ -15,4 +15,104 @@
     </div>
 </section>
 <!-- breadcrumb start-->
+<div class="container">
+    <div class="section-top-border">
+
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="form-row">
+
+                <div class="col-md-6 form-group">
+                    <div class="mt-10">
+                        <label for="firstname">Firstname</label>
+                        <input formControlName="firstname" id="firstname" type="text" name="firstname"
+                            placeholder="firstname" required class="single-input">
+
+                        <div *ngIf="myfirstname.touched && myfirstname.invalid">
+                            <small *ngIf="myfirstname.errors.required" class="text-danger">Firstname is required</small>
+                            <small *ngIf="myfirstname.errors.pattern" class="text-danger">Invalid Firstname</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <div class="mt-10">
+                        <label for="lastname">Lastname</label>
+                        <input formControlName="lastname" id="lastname" type="text" name="lastname"
+                            placeholder="lastname" required class="single-input">
+
+                        <div *ngIf="mylastname.touched && mylastname.invalid">
+                            <small *ngIf="mylastname.errors.required" class="text-danger">Phone is required</small>
+                            <small *ngIf="mylastname.errors.pattern" class="text-danger">Invalid Phone</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-6 form-group">
+                    <div class="mt-10">
+                        <label for="email">Email</label>
+                        <input formControlName="email" id="email" type="email" name="email" placeholder="email" required
+                            class="single-input">
+
+                        <div *ngIf="myemail.touched && myemail.invalid">
+                            <small *ngIf="myemail.errors.required" class="text-danger">Email is required</small>
+                            <small *ngIf="myemail.errors.email" class="text-danger">Invalid Email</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <div class="mt-10">
+                        <label for="phone">Phone</label>
+                        <input formControlName="phone" id="phone" type="text" name="phone" placeholder="phone" required
+                            class="single-input">
+
+                        <div *ngIf="myphone.touched && myphone.invalid">
+                            <small *ngIf="myphone.errors.required" class="text-danger">Phone is required</small>
+                            <small *ngIf="myphone.errors.pattern" class="text-danger">Invalid Phone</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <div class="mt-10">
+                        <label for="password">Password</label>
+                        <input formControlName="password" id="password" type="password" name="password"
+                            placeholder="password" required class="single-input">
+                        <div *ngIf="mypassword.touched && mypassword.invalid">
+                            <small *ngIf="mypassword.errors.required" class="text-danger">Password is required</small>
+                            <small *ngIf="mypassword.errors.minlength" class="text-danger">Invalid Password</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <div class="mt-10">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input formControlName="confirmPassword" id="confirmPassword" type="password"
+                            name="confirmPassword" placeholder="Confirm Password" required class="single-input">
+                        <div *ngIf="myconfirmPassword.touched && myconfirmPassword.invalid">
+                            <small *ngIf="myconfirmPassword.errors.required" class="text-danger">Password is
+                                required</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col form-group">
+                    <input type="submit" class="btn_1" value="Register" [disabled]="registerForm.invalid">
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>
 <app-footer></app-footer>

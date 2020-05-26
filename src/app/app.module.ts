@@ -14,6 +14,12 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
 import { ReactiveFormsModule , FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import {
+  ToastrModule,
+  ToastNoAnimation,
+  ToastNoAnimationModule
+} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,10 @@ import { ReactiveFormsModule , FormsModule } from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule , 
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    // BrowserAnimationsModule no longer required
+    ToastNoAnimationModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

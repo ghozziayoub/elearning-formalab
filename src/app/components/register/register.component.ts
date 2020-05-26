@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +14,12 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private us:UserService,
+    private router:Router,
+    private toastr: ToastrService
+    ) {
 
     let registerFormInputs = {
       firstname: new FormControl("", [
@@ -56,7 +65,28 @@ export class RegisterComponent implements OnInit {
 
   register() {
     let data = this.registerForm.value;
-    console.log(data);
+
+    let user = new User(
+      data.firstname,
+      data.lastname,
+      data.email,
+      data.phone,
+      data.password,
+    );
+
+    this.us.registerUser(user).subscribe(
+      (res)=>{
+        this.toastr.success(res.message);
+        this.router.navigate(['/login']);
+        console.log(res.message);
+      },
+      (err)=>{
+        this.toastr.error(err.error.message);
+        console.log(err.error.message);
+      }
+    )
+
+
   }
 
 }

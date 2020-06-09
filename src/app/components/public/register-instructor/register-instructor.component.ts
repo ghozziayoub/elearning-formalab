@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
 import { User } from 'src/app/models/user';
+import { Instructor } from 'src/app/models/instructor';
+import { InstructorService } from 'src/app/services/instructor.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register-instructor',
@@ -13,7 +17,10 @@ export class RegisterInstructorComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    ) {
+    private is: InstructorService,
+    private router:Router,
+    private toastr: ToastrService
+  ) {
 
     let registerFormInputs = {
       firstname: new FormControl("", [
@@ -50,10 +57,18 @@ export class RegisterInstructorComponent implements OnInit {
 
   register() {
     let data = this.registerForm.value;
+    let ins = new Instructor(data.firstname, data.lastname, data.email, data.phone);
 
-    console.log(data);
-    
-
+    this.is.registerInstuctor(ins).subscribe(
+      (res) => {
+        this.toastr.success(res.message);
+        this.router.navigate(['/login']);
+      }
+      ,
+      (err) => {
+        this.toastr.error(err.error.message);
+      }
+    )
   }
 
 

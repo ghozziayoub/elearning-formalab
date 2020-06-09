@@ -21,6 +21,8 @@ import {
   ToastNoAnimationModule
 } from 'ngx-toastr';
 import { RegisterInstructorComponent } from './components/public/register-instructor/register-instructor.component';
+import { TestComponent } from './components/test/test.component';
+import { TableauBordComponent } from './components/dashboard/tableau-bord/tableau-bord.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RegisterInstructorComponent } from './components/public/register-instru
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterInstructorComponent
+    RegisterInstructorComponent,
+    TestComponent,
+    TableauBordComponent
   ],
   imports: [
     BrowserModule,

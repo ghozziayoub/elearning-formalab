@@ -8,6 +8,8 @@ import { CoursesComponent } from './components/public/courses/courses.component'
 import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
 import { RegisterInstructorComponent } from './components/public/register-instructor/register-instructor.component';
+import { TestComponent } from './components/test/test.component';
+import { TableauBordComponent } from './components/dashboard/tableau-bord/tableau-bord.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,10 @@ const routes: Routes = [
   {
     path: "register-instructor",
     component: RegisterInstructorComponent
+  },
+  {
+    path: "dashboard",
+    component: TableauBordComponent
   }
 ];
 

@@ -10,6 +10,7 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { RegisterInstructorComponent } from './components/public/register-instructor/register-instructor.component';
 import { TestComponent } from './components/test/test.component';
 import { TableauBordComponent } from './components/dashboard/tableau-bord/tableau-bord.component';
+import { Page404Component } from './components/page404/page404.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,12 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: TableauBordComponent
+  },
+
+  //PAGE 404
+  {
+    path:"**",
+    component:Page404Component
   }
 ];
 

@@ -23,6 +23,8 @@ import {
 import { RegisterInstructorComponent } from './components/public/register-instructor/register-instructor.component';
 import { TestComponent } from './components/test/test.component';
 import { TableauBordComponent } from './components/dashboard/tableau-bord/tableau-bord.component';
+import { Page404Component } from './components/page404/page404.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { TableauBordComponent } from './components/dashboard/tableau-bord/tablea
     RegisterComponent,
     RegisterInstructorComponent,
     TestComponent,
-    TableauBordComponent
+    TableauBordComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ import { TableauBordComponent } from './components/dashboard/tableau-bord/tablea
     HttpClientModule,
     // BrowserAnimationsModule no longer required
     ToastNoAnimationModule.forRoot(),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

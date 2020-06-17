@@ -11,6 +11,7 @@ import { RegisterInstructorComponent } from './components/public/register-instru
 import { TestComponent } from './components/test/test.component';
 import { TableauBordComponent } from './components/dashboard/tableau-bord/tableau-bord.component';
 import { Page404Component } from './components/page404/page404.component';
+import { LoginAdminComponent } from './components/public/login-admin/login-admin.component';
 
 const routes: Routes = [
   {
@@ -49,11 +50,18 @@ const routes: Routes = [
     path: "dashboard",
     component: TableauBordComponent
   },
-
+  {
+    path: "login-admin",
+    component: LoginAdminComponent
+  },
+  {
+    path: "test",
+    component: TestComponent
+  },
   //PAGE 404
   {
-    path:"**",
-    component:Page404Component
+    path: "**",
+    component: Page404Component
   }
 ];
 

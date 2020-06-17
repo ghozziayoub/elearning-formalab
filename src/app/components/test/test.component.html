@@ -1,4 +1,20 @@
-<form>
-    <input type="file" (change)="save($event)" multiple>
-    <span [innerHTML]="result"></span>
+<form [formGroup]="addForm" (ngSubmit)="save()" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" formControlName="nom" id="nom" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" id="image" class="form-control-file" (change)="onSelectFile($event)"
+                    accept="image/jpeg, image/png" #file>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" class="btn btn-primary" value="SEND">
+        </div>
+    </div>
 </form>

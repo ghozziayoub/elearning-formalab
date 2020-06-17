@@ -25,6 +25,7 @@ import { TestComponent } from './components/test/test.component';
 import { TableauBordComponent } from './components/dashboard/tableau-bord/tableau-bord.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ChartsModule } from 'ng2-charts';
+import { LoginAdminComponent } from './components/public/login-admin/login-admin.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ChartsModule } from 'ng2-charts';
     RegisterInstructorComponent,
     TestComponent,
     TableauBordComponent,
-    Page404Component
+    Page404Component,
+    LoginAdminComponent
   ],
   imports: [
     BrowserModule,

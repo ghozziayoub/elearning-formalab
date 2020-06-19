@@ -12,6 +12,7 @@ import { TestComponent } from './components/test/test.component';
 import { TableauBordComponent } from './components/dashboard/tableau-bord/tableau-bord.component';
 import { Page404Component } from './components/page404/page404.component';
 import { LoginAdminComponent } from './components/public/login-admin/login-admin.component';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -48,7 +49,8 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
-    component: TableauBordComponent
+    component: TableauBordComponent,
+    canActivate: [AdminGuard]
   },
   {
     path: "login-admin",

@@ -37,6 +37,9 @@ export class LoginAdminComponent implements OnInit {
   get mypassword() { return this.loginForm.get('password'); }
 
   ngOnInit(): void {
+    if (this.as.isLoggedIn()) {
+      this.router.navigate(['/dashboard'])
+    }
   }
 
   login() {

@@ -47,6 +47,35 @@
                                             <th>#</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        <tr *ngFor="let instructor of instructorsList; let i = index">
+                                            <th>{{i}}</th>
+                                            <th>{{instructor.firstname}}</th>
+                                            <th>{{instructor.lastname}}</th>
+                                            <th>{{instructor.email}}</th>
+                                            <th>{{instructor.phone}}</th>
+                                            <th>
+                                                <span *ngIf="instructor.accountState"
+                                                    class="badge badge-success badge-sm badge-pill">Active</span>
+                                                <span *ngIf="!instructor.accountState"
+                                                    class="badge badge-danger badge-sm badge-pill">Inactive</span>
+                                            </th>
+                                            <th>
+                                                <button [ngClass]="{ 
+                                                        'btn-success': !instructor.accountState , 
+                                                        'btn-danger':instructor.accountState 
+                                                    }" class="btn btn-sm"
+                                                    (click)="update(instructor._id)">
+
+                                                    <i [ngClass]="{ 
+                                                        'fa-user-check': !instructor.accountState , 
+                                                        'fa-user-lock':instructor.accountState 
+                                                    }" class="fas"></i>
+
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

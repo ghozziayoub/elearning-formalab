@@ -15,6 +15,11 @@ import { LoginAdminComponent } from './components/public/login-admin/login-admin
 import { AdminGuard } from './guards/admin.guard';
 import { LoginInstructorComponent } from './components/public/login-instructor/login-instructor.component';
 import { ListInstructorsComponent } from './components/dashboard/admin/list-instructors/list-instructors.component';
+import { InstructorGuard } from './guards/instructor.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { ListClassroomComponent } from './components/dashboard/instructor/list-classroom/list-classroom.component';
+import { DetailClassroomComponent } from './components/dashboard/instructor/detail-classroom/detail-classroom.component';
+import { AddCourseComponent } from './components/dashboard/instructor/add-course/add-course.component';
 
 const routes: Routes = [
   {
@@ -52,7 +57,7 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: TableauBordComponent,
-    canActivate: [AdminGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: "login-admin",
@@ -68,7 +73,29 @@ const routes: Routes = [
     children: [
       {
         path: "list-instructors",
-        component: ListInstructorsComponent
+        component: ListInstructorsComponent,
+        canActivate: [AdminGuard]
+      }
+    ]
+  },
+  //ADMIN
+  {
+    path: "instructor",
+    children: [
+      {
+        path: "list-classroom",
+        component: ListClassroomComponent,
+        canActivate: [InstructorGuard]
+      },
+      {
+        path: "detail-classroom",
+        component: DetailClassroomComponent,
+        canActivate: [InstructorGuard]
+      },
+      {
+        path: "add-course",
+        component: AddCourseComponent,
+        canActivate: [InstructorGuard]
       }
     ]
   },

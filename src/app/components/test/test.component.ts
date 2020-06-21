@@ -47,8 +47,8 @@ export class TestComponent implements OnInit {
 
     formData.append("image", this.uploadedFile, this.uploadedFile.name);
     formData.append("data", JSON.stringify(data));
-    let test: String = "1234"
-    this.http.patch<any>("http://localhost:3000/doc/updateInfo/" + test, formData).subscribe(
+    
+    this.http.post<any>("http://localhost:3000/testFileAndData", formData).subscribe(
       res => {
         console.log(res);
       },

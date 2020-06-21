@@ -13,9 +13,9 @@ export class LoginAdminComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private as: AdminService,
-    private router:Router) {
+    private router: Router) {
 
     let loginFormInputs = {
       email: new FormControl("", [
@@ -37,7 +37,7 @@ export class LoginAdminComponent implements OnInit {
   get mypassword() { return this.loginForm.get('password'); }
 
   ngOnInit(): void {
-    if (this.as.isLoggedIn()) {
+    if (localStorage.getItem('token')) {
       this.router.navigate(['/dashboard'])
     }
   }
@@ -48,7 +48,7 @@ export class LoginAdminComponent implements OnInit {
     this.as.loginAdmin(data).subscribe(
       res => {
         let token = res.token;
-        localStorage.setItem('token',token);
+        localStorage.setItem('token', token);
         this.router.navigate(['/dashboard'])
       },
       err => {

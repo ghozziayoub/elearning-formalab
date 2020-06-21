@@ -30,6 +30,9 @@ import { SidebarComponent } from './components/dashboard/sidebar/sidebar.compone
 import { TopbarComponent } from './components/dashboard/topbar/topbar.component';
 import { LoginInstructorComponent } from './components/public/login-instructor/login-instructor.component';
 import { ListInstructorsComponent } from './components/dashboard/admin/list-instructors/list-instructors.component';
+import { ListClassroomComponent } from './components/dashboard/instructor/list-classroom/list-classroom.component';
+import { DetailClassroomComponent } from './components/dashboard/instructor/detail-classroom/detail-classroom.component';
+import { AddCourseComponent } from './components/dashboard/instructor/add-course/add-course.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { ListInstructorsComponent } from './components/dashboard/admin/list-inst
     SidebarComponent,
     TopbarComponent,
     LoginInstructorComponent,
-    ListInstructorsComponent
+    ListInstructorsComponent,
+    ListClassroomComponent,
+    DetailClassroomComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,

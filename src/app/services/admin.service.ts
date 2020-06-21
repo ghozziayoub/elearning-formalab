@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
+//@auth0/angular-jwt
 import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
@@ -11,10 +12,6 @@ export class AdminService {
   private loginAdminUrl = "http://localhost:3000/admin/login";
 
   constructor(private http: HttpClient) { }
-
-  getStat() {
-    return this.http.get<any>(this.statUrl);
-  }
 
   loginAdmin(admin) {
     return this.http.post<any>(this.loginAdminUrl, admin);
@@ -37,6 +34,10 @@ export class AdminService {
     else {
       return false;
     }
+  }
+
+  getStat() {
+    return this.http.get<any>(this.statUrl);
   }
 
 }

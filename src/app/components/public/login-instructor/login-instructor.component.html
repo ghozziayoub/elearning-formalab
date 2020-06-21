@@ -1,0 +1,62 @@
+<app-header></app-header>
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Login Instructor</h2>
+                        <p>Home<span>/</span>login</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+
+<div class="container">
+    <div class="section-top-border">
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-row">
+
+                <div class="col form-group">
+                    <div class="mt-10">
+                        <label for="email">Email</label>
+                        <input formControlName="email" id="email" type="email" name="email" placeholder="email" required class="single-input">
+
+                        <div *ngIf="myemail.touched && myemail.invalid">
+                            <small *ngIf="myemail.errors.required" class="text-danger">Email is required</small>
+                            <small *ngIf="myemail.errors.email" class="text-danger">Invalid Email</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="col form-group">
+                    <div class="mt-10">
+                        <label for="password">Password</label>
+                        <input formControlName="password" id="password" type="password" name="password" placeholder="password" required class="single-input">
+                        <div *ngIf="mypassword.touched && mypassword.invalid">
+                            <small *ngIf="mypassword.errors.required" class="text-danger">Password is required</small>
+                            <small *ngIf="mypassword.errors.minlength" class="text-danger">Invalid Password</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col form-group">
+                    <input type="submit" class="btn rounded btn_1" value="Login" [disabled]="loginForm.invalid">
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+<app-footer></app-footer>

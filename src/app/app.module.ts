@@ -26,6 +26,10 @@ import { TableauBordComponent } from './components/dashboard/tableau-bord/tablea
 import { Page404Component } from './components/page404/page404.component';
 import { ChartsModule } from 'ng2-charts';
 import { LoginAdminComponent } from './components/public/login-admin/login-admin.component';
+import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
+import { TopbarComponent } from './components/dashboard/topbar/topbar.component';
+import { LoginInstructorComponent } from './components/public/login-instructor/login-instructor.component';
+import { ListInstructorsComponent } from './components/dashboard/admin/list-instructors/list-instructors.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { LoginAdminComponent } from './components/public/login-admin/login-admin
     TestComponent,
     TableauBordComponent,
     Page404Component,
-    LoginAdminComponent
+    LoginAdminComponent,
+    SidebarComponent,
+    TopbarComponent,
+    LoginInstructorComponent,
+    ListInstructorsComponent
   ],
   imports: [
     BrowserModule,

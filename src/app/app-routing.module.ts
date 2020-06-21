@@ -13,6 +13,8 @@ import { TableauBordComponent } from './components/dashboard/tableau-bord/tablea
 import { Page404Component } from './components/page404/page404.component';
 import { LoginAdminComponent } from './components/public/login-admin/login-admin.component';
 import { AdminGuard } from './guards/admin.guard';
+import { LoginInstructorComponent } from './components/public/login-instructor/login-instructor.component';
+import { ListInstructorsComponent } from './components/dashboard/admin/list-instructors/list-instructors.component';
 
 const routes: Routes = [
   {
@@ -55,6 +57,20 @@ const routes: Routes = [
   {
     path: "login-admin",
     component: LoginAdminComponent
+  },
+  {
+    path: "login-instructor",
+    component: LoginInstructorComponent
+  },
+  //ADMIN
+  {
+    path: "admin",
+    children: [
+      {
+        path: "list-instructors",
+        component: ListInstructorsComponent
+      }
+    ]
   },
   {
     path: "test",

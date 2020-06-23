@@ -20,6 +20,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { ListClassroomComponent } from './components/dashboard/instructor/list-classroom/list-classroom.component';
 import { DetailClassroomComponent } from './components/dashboard/instructor/detail-classroom/detail-classroom.component';
 import { AddCourseComponent } from './components/dashboard/instructor/add-course/add-course.component';
+import { AddClassroomComponent } from './components/dashboard/instructor/add-classroom/add-classroom.component';
 
 const routes: Routes = [
   {
@@ -78,7 +79,7 @@ const routes: Routes = [
       }
     ]
   },
-  //ADMIN
+  //INSTRUCTOR
   {
     path: "instructor",
     children: [
@@ -88,7 +89,12 @@ const routes: Routes = [
         canActivate: [InstructorGuard]
       },
       {
-        path: "detail-classroom",
+        path: "add-classroom",
+        component: AddClassroomComponent,
+        canActivate: [InstructorGuard]
+      },
+      {
+        path: "detail-classroom/:idClassroom",
         component: DetailClassroomComponent,
         canActivate: [InstructorGuard]
       },

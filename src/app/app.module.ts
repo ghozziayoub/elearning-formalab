@@ -33,6 +33,7 @@ import { ListInstructorsComponent } from './components/dashboard/admin/list-inst
 import { ListClassroomComponent } from './components/dashboard/instructor/list-classroom/list-classroom.component';
 import { DetailClassroomComponent } from './components/dashboard/instructor/detail-classroom/detail-classroom.component';
 import { AddCourseComponent } from './components/dashboard/instructor/add-course/add-course.component';
+import { AddClassroomComponent } from './components/dashboard/instructor/add-classroom/add-classroom.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AddCourseComponent } from './components/dashboard/instructor/add-course
     ListInstructorsComponent,
     ListClassroomComponent,
     DetailClassroomComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    AddClassroomComponent
   ],
   imports: [
     BrowserModule,

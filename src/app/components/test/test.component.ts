@@ -10,7 +10,9 @@ import { HttpClient } from "@angular/common/http";
 export class TestComponent implements OnInit {
   result: string = "";
   url: string = "";
+
   private uploadedFile: File;
+
   addForm: FormGroup;
 
   constructor(fb: FormBuilder, private http: HttpClient) {
@@ -25,7 +27,8 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelectFile(event) { // called each time file input changes
+  onSelectFile(event) { 
+    // called each time file input changes
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
 
@@ -35,10 +38,7 @@ export class TestComponent implements OnInit {
         this.url = (event.target as FileReader).result.toString();
       }
     }
-
     this.uploadedFile = event.target.files[0];
-
-
   }
 
   save() {

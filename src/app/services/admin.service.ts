@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
-//@auth0/angular-jwt
+// @auth0/angular-jwt
 import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
@@ -29,7 +29,6 @@ export class AdminService {
       } else {
         return false;
       }
-
     }
     else {
       return false;

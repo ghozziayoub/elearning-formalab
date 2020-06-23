@@ -1,5 +1,5 @@
 <form [formGroup]="addForm" (ngSubmit)="save()" enctype="multipart/form-data">
-    
+
     <div class="container">
         <div class="row">
             <div class="form-group">
@@ -7,7 +7,9 @@
                 <input type="text" formControlName="nom" id="nom" class="form-control">
             </div>
         </div>
+        
         <img [src]="url" width="100" alt="">
+
         <div class="row">
             <div class="form-group">
                 <label for="image">Image</label>
